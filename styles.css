@@ -1,0 +1,112 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+:root {
+  --clr-cyan-600: hsl(192, 37%, 48%);
+  --clr-purple-600: hsl(268, 34%, 53%);
+
+  --clr-cyan-300: hsl(192, 90%, 77%);
+  --clr-purple-300: hsl(192, 100%, 86%);
+
+  --clr-slate-900: hsl(240, 21%, 20%);
+  --clr-slate-600: hsl(240, 10%, 57%);
+  --clr-slate-300: hsl(240, 18%, 85%);
+  --clr-white: hsl(0, 0%, 98%);
+
+  --fs-heading-1: clamp(2.5rem, 1.176rem + 4.412vw, 4rem);
+  --fs-heading-2: clamp(2rem, 1.559rem + 1.471vw, 2.5rem);
+  --fs-body: clamp(1rem, 0.89rem + 0.368vw, 1.125rem);
+  --fs-overline: clamp(0.75rem, 0.529rem + 0.735vw, 1rem);
+}
+
+/* typo */
+
+body {
+  font-family: "Red Hat Display", sans-serif;
+  font-size: var(--fs-body);
+  font-weight: 600;
+  color: var(--clr-slate-600);
+}
+
+h1 {
+  font-size: var(--fs-heading-1);
+  color: var(--clr-slate-900);
+  font-weight: 900;
+}
+
+h2,
+.h2 {
+  font-size: var(--fs-heading-2);
+  color: var(--clr-slate-900);
+  font-weight: 900;
+}
+
+.overline {
+  font-size: var(--fs-overline);
+  color: var(--clr-cyan-600);
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+}
