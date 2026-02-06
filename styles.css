@@ -89,6 +89,7 @@ body {
   font-size: var(--fs-body);
   font-weight: 600;
   color: var(--clr-slate-600);
+  background-color: var(--clr-white);
 }
 
 h1 {
@@ -109,4 +110,27 @@ h2,
   color: var(--clr-cyan-600);
   letter-spacing: 0.25rem;
   text-transform: uppercase;
+}
+
+/* simple layouts */
+
+header {
+  display: flex;
+  justify-content: center;
+  margin-block-start: clamp(3rem, -3rem + 12.5vw, 5rem);
+  margin-block-end: 3rem;
+}
+
+footer {
+  padding-block: clamp(3rem, -9rem + 25vw, 7rem);
+  background-image:
+    linear-gradient(hsl(from var(--clr-cyan-600) h s l / 0.85)),
+    url("./assets/desktop/image-footer.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  > * {
+    color: var(--clr-white);
+  }
 }
