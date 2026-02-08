@@ -80,6 +80,15 @@ picture {
   --fs-heading-2: clamp(2rem, 1.559rem + 1.471vw, 2.5rem);
   --fs-body: clamp(1rem, 0.89rem + 0.368vw, 1.125rem);
   --fs-overline: clamp(0.75rem, 0.529rem + 0.735vw, 1rem);
+
+  --spacing-200: 1rem;
+  --spacing-300: 1.5rem;
+  --spacing-400: 2rem;
+  --spacing-500: 2.5rem;
+  --spacing-600: 3rem;
+  --spacing-800: 4rem;
+  --spacing-1000: 5rem;
+  --spacing-1200: 7rem;
 }
 
 /* typo */
@@ -118,7 +127,7 @@ h2,
 .hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  row-gap: 3rem;
+  row-gap: var(--spacing-600);
 
   .hero-content {
     grid-column: 1 / -1;
@@ -131,7 +140,7 @@ h2,
 
   @media (min-width: 80rem) {
     grid-template-columns: auto 1fr auto;
-    column-gap: 2rem;
+    column-gap: var(--spacing-400);
 
     .hero-content {
       grid-column: 2 / 3;
@@ -146,14 +155,14 @@ h2,
 .hero-content {
   display: flex;
   flex-flow: column;
-  gap: 1.5rem;
+  gap: var(--spacing-300);
   align-items: center;
 }
 
 .button-group {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: var(--spacing-200);
   justify-content: center;
 }
 
@@ -166,15 +175,15 @@ h2,
   }
 
   .h2 {
-    margin-block: 1rem 2rem;
+    margin-block: var(--spacing-200) var(--spacing-400);
   }
 }
 
 .image-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-  padding-block: 4rem;
+  gap: var(--spacing-300);
+  padding-block: var(--spacing-800);
 
   @media (min-width: 48rem) {
     grid-template-columns: repeat(4, 1fr);
@@ -184,7 +193,7 @@ h2,
 .switcher {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: var(--spacing-300);
   justify-content: center;
 
   > * {
@@ -199,13 +208,17 @@ h2,
 header {
   display: flex;
   justify-content: center;
-  margin-block-start: clamp(3rem, -3rem + 12.5vw, 5rem);
-  margin-block-end: 3rem;
+  margin-block-start: clamp(
+    var(--spacing-600),
+    -3rem + 12.5vw,
+    var(--spacing-1000)
+  );
+  margin-block-end: var(--spacing-600);
 }
 
 footer {
   margin-block-start: 10.75rem;
-  padding-block: clamp(3rem, -9rem + 25vw, 7rem);
+  padding-block: clamp(var(--spacing-600), -9rem + 25vw, var(--spacing-1200));
   background-image:
     linear-gradient(hsl(from var(--clr-cyan-600) h s l / 0.85)),
     url("./assets/desktop/image-footer.jpg");
@@ -223,7 +236,7 @@ footer {
 .button {
   text-decoration: none;
   color: var(--clr-white);
-  padding: 1rem 2.5rem;
+  padding: var(--spacing-200) var(--spacing-500);
   border-radius: 100vw;
   max-width: fit-content;
 
