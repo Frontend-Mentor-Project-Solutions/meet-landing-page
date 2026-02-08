@@ -168,6 +168,7 @@ h2,
 
 .support {
   display: grid;
+  justify-items: center;
   margin-block-start: clamp(12.5rem, 10rem + 8.333vw, 17.5rem);
 
   .image-grid {
@@ -184,6 +185,7 @@ h2,
   grid-template-columns: repeat(2, 1fr);
   gap: var(--spacing-300);
   padding-block: var(--spacing-800);
+  padding-block-start: 5.75rem; /* take account of number */
 
   @media (min-width: 48rem) {
     grid-template-columns: repeat(4, 1fr);
@@ -254,6 +256,36 @@ footer {
     span {
       color: var(--clr-purple-300);
     }
+  }
+}
+
+/* section numbers */
+
+[data-number] {
+  position: relative;
+
+  &::before {
+    content: attr(data-number);
+    font-weight: 900;
+    position: absolute;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    border: 1px solid var(--clr-slate-300);
+    background-color: var(--clr-white);
+    border-radius: 100vw;
+    top: -1.75rem;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 5rem;
+    background-color: var(--clr-slate-300);
+    top: calc(-1.75rem - 5rem);
   }
 }
 
