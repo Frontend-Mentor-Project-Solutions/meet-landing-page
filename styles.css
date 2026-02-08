@@ -66,9 +66,11 @@ picture {
 
 :root {
   --clr-cyan-600: hsl(192, 37%, 48%);
-  --clr-purple-600: hsl(268, 34%, 53%);
-
+  --clr-cyan-400: hsl(192, 54%, 64%);
   --clr-cyan-300: hsl(192, 90%, 77%);
+
+  --clr-purple-600: hsl(268, 34%, 53%);
+  --clr-purple-400: hsl(268, 55%, 71%);
   --clr-purple-300: hsl(268, 100%, 86%);
 
   --clr-slate-900: hsl(240, 21%, 20%);
@@ -105,6 +107,7 @@ body {
   font-weight: 600;
   color: var(--clr-slate-600);
   background-color: var(--clr-white);
+  overflow-x: hidden;
 }
 
 h1 {
@@ -207,6 +210,18 @@ h2,
   align-items: center;
 }
 
+[data-image] {
+  position: relative;
+
+  &[data-image="left"] {
+    left: clamp(-1.75rem, -2.125rem + 1.25vw, -1rem);
+  }
+
+  &[data-image="right"] {
+    right: clamp(-1.75rem, -2.125rem + 1.25vw, -1rem);
+  }
+}
+
 .button-group {
   display: flex;
   flex-wrap: wrap;
@@ -294,12 +309,22 @@ footer {
   padding: var(--spacing-200) var(--spacing-500);
   border-radius: 100vw;
   max-width: fit-content;
+  transition: background 200ms ease-in;
+
+  &:focus-visible {
+    outline: 2px solid var(--clr-white);
+    outline-offset: -4px;
+  }
 
   &[data-theme="primary"] {
     background-color: var(--clr-cyan-600);
 
     span {
       color: var(--clr-cyan-300);
+    }
+
+    &:hover {
+      background-color: var(--clr-cyan-400);
     }
   }
 
@@ -308,6 +333,10 @@ footer {
 
     span {
       color: var(--clr-purple-300);
+    }
+
+    &:hover {
+      background-color: var(--clr-purple-400);
     }
   }
 }
